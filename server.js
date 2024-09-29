@@ -66,7 +66,7 @@ io.on('connection', (socket) => {
             io.to(data.room).emit('updatePlayers', rooms[data.room]);
 
             // Verifica se o jogador chegou no limite
-            if (player.y <= 0) { // Ajuste o valor para corresponder à largura do canvas
+            if (player.y <= 0) {
                 io.to(data.room).emit('announceWinner', player.name);
             }
         }
